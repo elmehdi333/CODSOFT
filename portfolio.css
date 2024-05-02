@@ -1,0 +1,242 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+    /*display: flex;*/
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: auto; /* Ensures scrolling when content overflows */
+    font-size: 18px; /* Increased base font size for better readability */
+}
+
+header, section, footer {
+    text-align: center;
+    padding: 25px; /* Slightly increased padding */
+    margin-bottom: 20px; /* Ensure each section is distinctly separated */
+}
+
+header {
+    background: #f8f8f8;
+    font-weight: 600;
+}
+
+nav {
+    background-color: #333;
+    color: #fff;
+    padding: 15px 0; /* Increased padding for better visual separation */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 25px; /* Increased spacing between nav items */
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+nav ul li a:hover,
+nav ul li a:focus {
+    text-decoration: underline;
+}
+
+.about-container, .project {
+    max-width: 1200px;
+    margin: auto;
+    padding: 25px; /* Increased padding for more breathing room */
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/*.about-image, .project img {
+    width: 100%;
+    height: auto;
+    max-width: 400px;
+    display: block;
+    margin: 0 auto 20px;  Ensures sufficient space below images 
+}
+
+.about-text, .project-description {
+    text-align: left;
+    padding: 0 20px;
+}
+*/
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.about-image, .about-text {
+    transition: transform 0.3s ease;
+}
+
+.about-image {
+    flex: 1 1 300px;
+    overflow: hidden;
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+}
+
+.about-text {
+    flex: 2 1 600px;
+    padding: 20px;
+    background-color: antiquewhite;
+}
+
+.about-container:hover .about-image, .about-container:hover .about-text {
+    transform: scale(1.05);
+}
+@media (max-width: 800px) {
+    .about-container {
+        flex-direction: column;
+    }
+    .about-image, .about-text {
+        flex: 1 1 100%;
+        margin-right: 0;
+        padding-bottom: 20px;
+    }
+}
+
+.poll-item, .partner-logos-module--item--M8vYZ {
+    display: inline-block;
+    padding: 10px;
+    margin-bottom: 15px; /* Added more bottom margin for separation */
+}
+
+.stars {
+    position: relative;
+    height: 20px;
+    line-height: 20px;
+    margin-right: 10px;
+}
+
+.in {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: gold;
+    width: 80%; /* Example fixed width */
+}
+
+.partner-logos-module--list--l2SC7 {
+    text-align: center;
+    padding: 0;
+}
+
+footer {
+    background: #222;
+    color: white;
+    padding: 15px 0; /* Increased padding */
+}
+
+button, .poll-item {
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 12px 24px; /* Slightly larger buttons */
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 4px;
+    margin-top: 15px; /* More top margin for separation */
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+@media (max-width: 800px) {
+    .about-container, .project {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        display: block; /* Stack nav items vertically on smaller screens */
+        margin: 10px 0; /* Added vertical space for touch accessibility */
+    }
+}
+/*body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: auto;  /* Adds scroll to body if content overflows 
+}
+*/
+.card-container {
+    display: flex;
+    justify-content: center;  /* Centers the cards horizontally */
+    align-items: center;  /* Centers the cards vertically */
+    flex-wrap: nowrap;  /* Prevents wrapping */
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+}
+
+.card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: calc(100% / 3 - 40px);  /* Divides space equally between cards, minus margin */
+    margin: 10px;  /* Gives space between cards */
+    display: flex;
+    flex-direction: column;  /* Stacks image and content vertically */
+    overflow: hidden;  /* Keeps everything contained within the border-radius */
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.card-content {
+    padding: 15px;
+    text-align: center;
+    flex-grow: 1;  /* Allows the content area to fill available space */
+}
+
+.card-content h3 {
+    margin: 10px 0;
+    color: #333;
+}
+
+.card-content p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+}
+.card:hover, .card:focus-within {
+    transform: scale(1.5); /* Scales up the card on hover or focus */
+    z-index: 10; /* Ensures the card scales above other content */
+}
+
+@media (max-width: 768px) {
+    .card-container {
+        flex-direction: column;  /* Stacks cards vertically on small screens */
+        align-items: stretch;  /* Stretches cards to fill the container width */
+    }
+    .card {
+        width: 100%;  /* Each card takes full width on small screens */
+    }
+}
